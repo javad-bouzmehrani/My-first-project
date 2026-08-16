@@ -330,5 +330,37 @@
         </div>
       </div>
     </footer>
+    <!-- لایه مات و پیام هشدار (در موبایل و تبلت نمایش داده میشه) -->
+    <div class="mobile-blocker">
+      <div class="icon"><i class="fa fa-mobile"></i></div>
+      <h1>این سایت در موبایل و تبلت در دسترس نیست</h1>
+      <p>
+        لطفاً برای مشاهده محتوای این سایت از
+        <strong>رایانه شخصی (دسکتاپ)</strong> یا <strong>لپ‌تاپ</strong> استفاده
+        کنید.
+      </p>
+      <p style="margin-top: 20px; font-size: 14px; opacity: 0.5">
+        عرض صفحه نمایش: <span id="screen-width"></span>px
+      </p>
+    </div>
+
+    <script>
+      // نمایش عرض صفحه برای اطلاع کاربر (اختیاری)
+      function updateScreenWidth() {
+        const widthElement = document.getElementById("screen-width");
+        if (widthElement) {
+          widthElement.textContent = window.innerWidth;
+        }
+      }
+
+      // به‌روزرسانی هنگام تغییر اندازه صفحه
+      window.addEventListener("resize", updateScreenWidth);
+
+      // اجرا در بار اول
+      updateScreenWidth();
+
+      // (اختیاری) اگر کاربر بخواهد با تغییر اندازه به دسکتاپ برسه، صفحه رفرش میشه
+      // ولی نیازی نیست چون CSS خودش مدیریت میکنه
+    </script>
   </body>
 </html>
